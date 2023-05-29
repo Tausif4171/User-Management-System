@@ -2,7 +2,7 @@
 
 import { v4 as uuid } from 'uuid'
 
-let users = []
+let users = [{name:'john'}]
 
 export const getUsers = (req, res) => {
     res.send(users)
@@ -10,6 +10,6 @@ export const getUsers = (req, res) => {
 
 export const createUser = (req, res) => {
     const user = req.body
-    users.push([...users, { user, id: uuid() }])
+    users.push({ ...user, id: uuid() })
     res.send('user added successfully')
 }
