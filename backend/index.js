@@ -9,3 +9,6 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/',(req,res)=>res.send('Hello from express'))
+
+app.listen(port,()=>
+console.log(`server is running on: http://localhost:${port}`))
