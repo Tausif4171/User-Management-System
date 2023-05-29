@@ -9,6 +9,7 @@ app.use(bodyParser.json())
 
 app.use(cors())
 
+
 app.use('/', userRoutes)
 
 app.get('/', (req, res) => res.send('Hello from express'))
