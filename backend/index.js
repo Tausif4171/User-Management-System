@@ -13,5 +13,7 @@ app.use('/', userRoutes)
 
 app.get('/', (req, res) => res.send('Hello from express'))
 
+app.all('*', (req, res) => res.send('That route does not exist.'))
+
 app.listen(port, () =>
     console.log(`server is running on: http://localhost:${port}`))
