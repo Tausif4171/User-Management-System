@@ -1,11 +1,21 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import AddEdit from './pages/AddEdit';
+import View from './pages/View';
 
 function App() {
   return (
-    <div className='flex justify-center items-center h-[100vh]'>
-      Hii
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/addEdit' element={<AddEdit />} />
+        <Route path='/view' element={<View />} />
+      </Routes>
+    </Router>
   );
 }
 
