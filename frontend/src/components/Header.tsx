@@ -8,9 +8,9 @@ function Header() {
             <h1 className='text-[24px] text-[#3b2715]'>User Management App</h1>
             <div>
                 <ul className='flex flex-col md:flex-row gap-4 text-[20px] text-[#fff]'>
-                    <Link to='/'><li>Home</li></Link>
-                    <Link to='/about'> <li>About</li></Link>
-                    <Link to='/add'><li>Add</li></Link>
+                    <Link to='/'><li className={`${activeTab === 'Home' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Home')}>Home</li></Link>
+                    <Link to='/about'> <li className={`${activeTab === 'About' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('About')}>About</li></Link>
+                    <Link to='/add'><li className={`${activeTab === 'Add' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Add')}>Add</li></Link>
                 </ul>
             </div>
         </div>
