@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Header() {
     const [activeTab, setActiveTab] = useState('Home')
+    const location = useLocation()
+    
+    useEffect(() => {
+        if (location.pathname === '/') {
+            setActiveTab('Home')
+        }
+        else if (location.pathname === '/about') {
+            setActiveTab('About')
+        }
+        else if (location.pathname === '/add') {
+            setActiveTab('Add')
+        }
+    }, [location])
+
     return (
         <div className='flex flex-row justify-between w-[100%] bg-slate-400 items-center py-5 px-10'>
             <h1 className='text-[24px] text-[#3b2715]'>User Management App</h1>
