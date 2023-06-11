@@ -2,8 +2,15 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+interface UserData {
+  id: string,
+  name: string,
+  email: string,
+  phoneNumber: number
+}
+
 function Home() {
-  const [data, setData] = useState<any>([])
+  const [data, setData] = useState<UserData[]>([])
   console.log(data)
 
   async function getUsers() {
@@ -30,7 +37,7 @@ function Home() {
         </thead>
 
         <tbody>
-          {data.map((item: any, index: number) => {
+          {data.map((item: UserData, index: number) => {
             return (
               <tr className='border-[#434242] border-[1px] border-solid flex flex-row text-center'>
                 <td className='border-[#434242] border-r-[1px] border-solid p-2'>{index + 1}</td>
