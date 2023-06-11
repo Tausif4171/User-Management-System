@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 function Header() {
     const [activeTab, setActiveTab] = useState('Home')
     const location = useLocation()
-    
+
     useEffect(() => {
         if (location.pathname === '/') {
             setActiveTab('Home')
@@ -24,7 +24,7 @@ function Header() {
                 <ul className='flex flex-col md:flex-row gap-4 text-[20px] text-[#fff]'>
                     <Link to='/'><li className={`${activeTab === 'Home' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Home')}>Home</li></Link>
                     <Link to='/about'> <li className={`${activeTab === 'About' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('About')}>About</li></Link>
-                    <Link to='/add'><li className={`${activeTab === 'Add' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Add')}>Add</li></Link>
+                    <Link to='/add'><li className={`${activeTab === 'Add' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Add')}>AddUser</li></Link>
                 </ul>
             </div>
         </div>
