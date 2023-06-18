@@ -18,7 +18,7 @@ function Header() {
     }, [location])
 
     return (
-        <div className='flex flex-row justify-between w-[100%] bg-slate-400 items-center py-5 px-10'>
+        <div className='flex flex-row justify-between w-[100%] bg-slate-400 items-center py-5 lg:px-10 xl:px-[50px] 2xl:px-[100px] 3xl:px-[200px] 4xl:px-[300px] 5xl:px-[400px] 6xl:px-[500px] 7xl:px-[800px] 8xl:px-[1500px] 9xl:px-[2200px]'>
             <h1 className='text-[24px] text-[#3b2715]'>User Management App</h1>
             <div>
                 <ul className='flex flex-col md:flex-row gap-4 text-[20px] text-[#fff]'>
