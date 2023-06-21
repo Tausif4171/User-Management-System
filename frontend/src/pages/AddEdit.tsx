@@ -1,4 +1,6 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface IUserData {
   name: string,
@@ -24,7 +26,14 @@ function AddEdit() {
   }
 
   async function postUserData(data:IUserData) {
+    const response = await axios.post('http://localhost:5000/user', state)
 
+    if(response.status===200){
+         console.log(response)
+    }
+    else(
+      alert('sorry not able to store user data')
+    )
   }
 
   function handleSubmit(e: any) {
