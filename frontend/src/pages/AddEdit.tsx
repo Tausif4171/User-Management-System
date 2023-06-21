@@ -26,15 +26,15 @@ function AddEdit() {
     setState({ ...state, [name]: value })
   }
 
-  async function postUserData(data:IUserData) {
+  async function postUserData(data: IUserData) {
     const response = await axios.post('http://localhost:5000/user', state)
 
-    if(response.status===200){
-         console.log(response)
-         navigate('/')
+    if (response.status === 200) {
+      console.log(response)
+      navigate('/')
     }
-    else(
-      alert('sorry not able to store user data')
+    else (
+      alert('sorry not able to store user data!')
     )
   }
 
