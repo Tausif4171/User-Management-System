@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 
+interface IUserData {
+  name: string,
+  email: string,
+  phoneNumber: string
+}
+
 const initialState = {
   name: '',
   email: '',
@@ -17,8 +23,13 @@ function AddEdit() {
     setState({ ...state, [name]: value })
   }
 
+  async function postUserData(data:IUserData) {
+
+  }
+
   function handleSubmit(e: any) {
     e.preventDefault()
+    postUserData(state)
   }
 
   return (
