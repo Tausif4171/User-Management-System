@@ -17,6 +17,7 @@ const initialState = {
 function AddEdit() {
   const [state, setState] = useState(initialState)
   console.log(state)
+  const navigate = useNavigate()
 
   // const { name, email, phoneNumber } = initialState
 
@@ -30,6 +31,7 @@ function AddEdit() {
 
     if(response.status===200){
          console.log(response)
+         navigate('/')
     }
     else(
       alert('sorry not able to store user data')
