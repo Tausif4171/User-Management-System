@@ -19,6 +19,13 @@ function Home() {
       setData(response.data)
     }
   }
+  
+  const deleteUser =async(id:any)=>{
+    const response = await axios.delete(`http://localhost:5000/user/${id}`)
+    console.log(response.data)
+    getUsers()
+  }
+
   useEffect(() => {
     getUsers()
   }, [])
@@ -47,7 +54,7 @@ function Home() {
                 <td className='p-2 flex flex-row gap-2'>
                   <Link to={`/update/${item.id}`}><button className='border-[#434242] border-[1px] border-solid p-1'>Edit</button></Link>
                   <Link to={`/view/${item.id}`}><button className='border-[#434242] border-[1px] border-solid p-1'>View</button></Link>
-                  <Link to={`/delete/${item.id}`}><button className='border-[#434242] border-[1px] border-solid p-1'>Delete</button></Link>
+                  <Link to={`/delete/${item.id}`}><button className='border-[#434242] border-[1px] border-solid p-1' onClick={()=>deleteUser(item.id)}>Delete</button></Link>
                 </td>
               </tr>
             )
