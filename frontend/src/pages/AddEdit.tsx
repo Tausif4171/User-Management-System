@@ -40,12 +40,23 @@ function AddEdit() {
     )
   }
 
-  function handleSubmit(e: any) {
-    e.preventDefault()
-    postUserData(state)
+  async function updateUserData(state: IUserData, id: string) {
+    const response = await axios.put(`http://localhost:5000/user/${id}`, state)
+    console.log(response)
+    navigate('/')
   }
 
-  const getSingleUser = async (id: any) => {
+  function handleSubmit(e: any) {
+    e.preventDefault()
+    if (!id) {
+      postUserData(state)
+    }
+    else {
+      updateUserData(state, id)
+    }
+  }
+
+  const getSingleUser = async (id: string) => {
     const response = await axios.get(`http://localhost:5000/user/${id}`)
     console.log(response)
     setState({ ...response.data[0] })
