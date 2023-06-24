@@ -46,16 +46,6 @@ function AddEdit() {
     navigate('/')
   }
 
-  function handleSubmit(e: any) {
-    e.preventDefault()
-    if (!id) {
-      postUserData(state)
-    }
-    else {
-      updateUserData(state, id)
-    }
-  }
-
   const getSingleUser = async (id: string) => {
     const response = await axios.get(`http://localhost:5000/user/${id}`)
     console.log(response)
@@ -67,6 +57,16 @@ function AddEdit() {
       getSingleUser(id)
     }
   }, [id])
+
+  function handleSubmit(e: any) {
+    e.preventDefault()
+    if (!id) {
+      postUserData(state)
+    }
+    else {
+      updateUserData(state, id)
+    }
+  }
 
   return (
     <div className="flex flex-col  items-center mt-[120px] w-full h-screen leading-10">
