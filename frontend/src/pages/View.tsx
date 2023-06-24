@@ -31,7 +31,7 @@ function View() {
         </div>
 
         <div className='flex justify-center items-center'>
-          <Link to={'/'}><button className='bg-[#000000] px-4 rounded-md h-8 text-[#fff] text-[14px] mb-4'>Go Back</button></Link>
+          <Link to={'/'}><button className='bg-[#764293] px-4 rounded-[4px] h-8 text-slate-50 text-[14px] mb-4'>Go Back</button></Link>
         </div>
       </div>
     </div>
