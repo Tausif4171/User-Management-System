@@ -75,7 +75,7 @@ function AddEdit() {
           <input type='text' name='phoneNumber' value={state.phoneNumber} placeholder='Please enter your phoneNumber' onChange={handleInputChange} className='border-[1px] border-[#706e6e] border-solid rounded-[4px] text-[12px] px-2 outline-none' />
 
         </div>
-        <button className='border-[1px] border-[#b7b5b5] border-solid w-[100%] mt-7 px-1 rounded text-[16px] bg-[#764293] text-slate-50'>Add</button>
+        <button className='border-[1px] border-[#b7b5b5] border-solid w-[100%] mt-7 px-1 rounded text-[16px] bg-[#764293] text-slate-50'>{id ? 'Update' : 'Add'}</button>
       </form>
     </div>
 
