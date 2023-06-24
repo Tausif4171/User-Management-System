@@ -1,6 +1,6 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 interface IUserData {
   name: string,
@@ -18,6 +18,8 @@ function AddEdit() {
   const [state, setState] = useState(initialState)
   console.log(state)
   const navigate = useNavigate()
+  const { id } = useParams()
+  console.log(id)
 
   // const { name, email, phoneNumber } = initialState
 
@@ -42,6 +44,18 @@ function AddEdit() {
     e.preventDefault()
     postUserData(state)
   }
+
+  const getSingleUser = async (id: any) => {
+    const response = await axios.get(`http://localhost:5000/user/${id}`)
+    console.log(response)
+    setState({ ...response.data[0] })
+  }
+
+  useEffect(() => {
+    if (id) {
+      getSingleUser(id)
+    }
+  }, [id])
 
   return (
     <div className="flex flex-col  items-center mt-[120px] w-full h-screen leading-10">
