@@ -9,7 +9,7 @@ export const getUsers = (req, res) => {
 }
 
 export const createUser = (req, res) => {
-    const user = req.body
+    const user = req.body   // payload
     users.push({ ...user, id: uuid() })
     res.send('user added successfully')
 }
@@ -22,6 +22,8 @@ export const getSingleUser = (req, res) => {
 export const updateUser = (req, res) => {
     const user = users.find((user) => user.id === req.params.id)
     user.name = req.body.name
+    user.email = req.body.email
+    user.phoneNumber = req.body.phoneNumber
     res.send('user update successfully')
 }
 
