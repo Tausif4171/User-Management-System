@@ -69,7 +69,7 @@ function CreateAndEdit() {
   }
 
   return (
-    <div className="flex flex-col  items-center mt-[120px] w-full h-screen leading-10">
+    <div className="flex flex-col  items-center mt-[120px] w-full leading-10">
       <form onSubmit={handleSubmit} className="flex flex-col w-1/5">
         <div className='mb-[5px] flex flex-col'>
           <label>Name</label>
