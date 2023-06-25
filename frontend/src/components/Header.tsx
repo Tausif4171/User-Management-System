@@ -12,8 +12,8 @@ function Header() {
         else if (location.pathname === '/about') {
             setActiveTab('About')
         }
-        else if (location.pathname === '/add') {
-            setActiveTab('Add')
+        else if (location.pathname === '/create') {
+            setActiveTab('Create')
         }
     }, [location])
 
@@ -24,7 +24,7 @@ function Header() {
                 <ul className='flex flex-col md:flex-row gap-4 text-[18px] text-[#fff]'>
                     <Link to='/'><li className={`${activeTab === 'Home' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Home')}>Home</li></Link>
                     <Link to='/about'> <li className={`${activeTab === 'About' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('About')}>About</li></Link>
-                    <Link to='/add'><li className={`${activeTab === 'Add' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Add')}>Create</li></Link>
+                    <Link to='/create'><li className={`${activeTab === 'Create' ? 'text-[#000]' : ''}`} onClick={() => setActiveTab('Create')}>Create</li></Link>
                 </ul>
             </div>
         </div>

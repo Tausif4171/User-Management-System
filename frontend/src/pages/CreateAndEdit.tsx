@@ -14,7 +14,7 @@ const initialState = {
   phoneNumber: ''
 }
 
-function AddEdit() {
+function CreateAndEdit() {
   const [state, setState] = useState(initialState)
   console.log(state)
   const navigate = useNavigate()
@@ -93,4 +93,4 @@ function AddEdit() {
   )
 }
 
-export default AddEdit
+export default CreateAndEdit

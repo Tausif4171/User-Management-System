@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import AddEdit from './pages/AddEdit';
+import CreateAndEdit from './pages/CreateAndEdit';
 import View from './pages/View';
 import Header from './components/Header';
 
@@ -14,8 +14,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/add' element={<AddEdit />} />
-        <Route path='/update/:id' element={<AddEdit />} />
+        <Route path='/create' element={<CreateAndEdit />} />
+        <Route path='/update/:id' element={<CreateAndEdit />} />
         <Route path='/view/:id' element={<View />} />
       </Routes>
     </Router>
